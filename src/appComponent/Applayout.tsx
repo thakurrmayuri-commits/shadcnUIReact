@@ -1,7 +1,6 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { ROUTES } from "../utils/config";
-import AppHeader from "./AppHeader";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {

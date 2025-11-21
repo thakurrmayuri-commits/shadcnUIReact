@@ -3,7 +3,6 @@ import {
     TableBody,
     TableCaption,
     TableCell,
-    TableFooter,
     TableHead,
     TableHeader,
     TableRow,
@@ -11,9 +10,9 @@ import {
 import { Link } from "react-router-dom";
 import { Pencil, Trash2 } from 'lucide-react';
 import { Checkbox } from "../components/ui/checkbox";
-import { useParams, useNavigate } from "react-router-dom";
-import { useAppSelector } from "../reducers/hook";
-import { setInventory, setLoading } from "../reducers/inventoryReducer"
+import { useNavigate } from "react-router-dom";
+
+import { setLoading } from "../reducers/inventoryReducer"
 
 import {
     Tooltip,
@@ -23,16 +22,15 @@ import {
 
 import { Plus } from 'lucide-react';
 import useInventory from "./useInventory";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+
 
 
 export function TableDemo() {
 
-    //const { id } = useParams();
+
     const url = "http://localhost:8000/inventory";
     const navigate = useNavigate();
-    // const dispatcher = useDispatch();
+
     const { inventory } = useInventory(url);
 
 
@@ -45,15 +43,13 @@ export function TableDemo() {
             fetch(url + "/" + id, {
                 method: "DELETE",
             }).then(() => {
-                //dispatcher(setInventory(inventory));
+
                 navigate(`/`);
             })
         } catch (err) { console.error(err) };
 
     };
-    // useEffect(() => {
-    //     fetch(url);
-    // }, [inventory.length])
+
 
 
 
@@ -112,7 +108,7 @@ export function TableDemo() {
                                 </TableCell>
                             </TableRow>
                         ))}
-                        {/* <TableFooter>{inventory.product.length}</TableFooter> */}
+
                     </TableBody>
                 </Table>
             </div>

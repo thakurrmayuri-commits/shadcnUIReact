@@ -29,7 +29,7 @@ function CreateProduct() {
     const [quantity, setQuantity] = React.useState(0);
     const [price, setPrice] = React.useState(0);
     const [stock, setStock] = React.useState("IN_STOCK");
-    //const [open, setOpen] = React.useState(false);
+
 
 
     const handleSubmit = (event: React.FormEvent) => {
@@ -43,8 +43,6 @@ function CreateProduct() {
             status: stock,
         };
         setIsPending(true);
-        //console.log("user details: ", inventory)
-        //setOpen(true);
         fetch(`http://localhost:8000/inventory`, {
             method: "post",
             headers: { "content-type": "application/json" },
@@ -115,13 +113,6 @@ function CreateProduct() {
                                 Choose availability.
                             </FieldDescription>
                         </Field>
-                        {/* <Field>
-                            <FieldLabel htmlFor="availability">Status</FieldLabel>
-                            <Input id="availability" type="text" placeholder="in stock"
-                                onChange={(e) => {
-                                    setStock(e.target.value)
-                                }} />
-                        </Field> */}
                         <button className="bg-black text-white px-2 py-2 rounded" onClick={handleSubmit}>
                             Add
                         </button>
