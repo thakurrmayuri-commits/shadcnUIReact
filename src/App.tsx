@@ -1,15 +1,15 @@
 //import ButtonDefault from "./appComponent/Button";
 import { BrowserRouter } from "react-router-dom";
-import Header from "./appComponent/Header"
+import AppHeader from "./appComponent/AppHeader"
 
-import Layout from "./appComponent/Layout";
+import Applayout from "./appComponent/Applayout";
 
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Layout />
+      <AppHeader />
+      <Applayout />
     </BrowserRouter>
   )
 }

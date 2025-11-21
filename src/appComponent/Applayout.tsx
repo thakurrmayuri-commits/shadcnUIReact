@@ -17,7 +17,7 @@ function Applaout() {
         <section>
 
             <div>
-                {/* <Routes>
+                <Routes>
                     {ROUTES.map(
                         ({ path, component: Component, exact: isProtected }, index) => {
                             if (!Component) {
@@ -46,7 +46,7 @@ function Applaout() {
                             return <Route key={index} path={path} element={routeElement} />;
                         }
                     )}
-                </Routes> */}
+                </Routes>
             </div>
         </section>
     );

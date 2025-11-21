@@ -3,28 +3,28 @@ export const ROUTES = [
     {
         path: "*",
         component: () => import("../Pages/404"),
-        //exact: false,
+        exact: false,
     },
     {
         path: "/",
         component: () => import("../Pages/Home"),
-        //exact: true,
+        exact: true,
     },
     {
         path: "/product/:id",
         component: () => import("../Pages/EditProduct"),
-        // exact: true,
+        exact: true,
     },
     {
         path: "/createproduct",
         component: () => import("../Pages/createProduct"),
-        // exact: true,
+        exact: true,
     },
 
     {
         path: "/login",
-        component: () => import("../Pages/loginpage"),
-        // exact: true,
+        component: () => import("../Pages/LogIn"),
+        exact: true,
     },
 
 ]
