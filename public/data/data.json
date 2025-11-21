@@ -1,0 +1,40 @@
+{
+  "inventory": [
+    {
+      "id": "3682",
+      "product": "Hair brush",
+      "SKU": "SKU037",
+      "category": "Accessory",
+      "quantity": 3,
+      "price": 10,
+      "status": "IN_STOCK"
+    },
+    {
+      "id": "ae6b",
+      "product": "Apples",
+      "SKU": "SKU034",
+      "category": "Fruits",
+      "quantity": 6,
+      "price": 4,
+      "status": "IN_STOCK"
+    },
+    {
+      "id": "7f3c",
+      "product": "tortilla",
+      "SKU": "SKU031",
+      "category": "Food",
+      "quantity": 8,
+      "price": 4,
+      "status": "IN_STOCK"
+    },
+    {
+      "id": "213c",
+      "product": "Hair brush",
+      "SKU": "SKU037",
+      "category": "Accessory",
+      "quantity": 2,
+      "price": 10,
+      "status": "IN_STOCK"
+    }
+  ]
+}
