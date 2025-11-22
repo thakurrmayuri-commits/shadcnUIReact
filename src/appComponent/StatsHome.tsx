@@ -3,13 +3,13 @@ import {
     ItemContent,
     ItemGroup,
     ItemTitle,
-} from "@/components/ui/item"
+} from "../components/ui/item"
 import { Box, TrendingUp, TriangleAlert, CircleDollarSign } from 'lucide-react';
-import useInventory from "./useInventory";
 
-export function StatsHome() {
 
-    const { inventory } = useInventory(`http://localhost:8000/inventory`);
+export function StatsHome({ products }: { products: any[] }) {
+
+    //const { inventory } = useInventory(`http://localhost:8000/inventory`);
 
     return (
         <div className="flex w-full flex-col gap-8">
@@ -21,7 +21,7 @@ export function StatsHome() {
                                 <div className="flex flex-row justify-around">
                                     <div className="flex flex-col gap-4 px-8 text-xl">
                                         <span>Total Products</span>
-                                        <span className="">{inventory.length}</span>
+                                        <span className="">{products.length}</span>
                                     </div>
                                     <div>
                                         <span className="px-8"><Box color="#5e91c5ff" />
@@ -35,7 +35,7 @@ export function StatsHome() {
                 <Item asChild className="bg-white">
                     <a href="/LogIn">
                         <ItemContent>
-                            <ItemTitle><div className="flex flex-col gap-4 text-xl"><span>Total Items</span><span>{inventory.length}</span></div>
+                            <ItemTitle><div className="flex flex-col gap-4 text-xl"><span>Total Items</span><span>{products.length}</span></div>
                                 <span className='rounded bg-green-200'><TrendingUp color="#3e9364ff" /></span></ItemTitle>
                         </ItemContent>
                     </a>

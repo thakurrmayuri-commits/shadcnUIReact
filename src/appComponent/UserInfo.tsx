@@ -4,10 +4,10 @@ import {
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+} from "../components/ui/navigation-menu";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Spinner } from "@/components/ui/spinner";
-import { Button } from "@/components/ui/button";
+import { Spinner } from "../components/ui/spinner";
+import { Button } from "../components/ui/button";
 
 const UserInfo = () => {
     const { user, isAuthenticated, isLoading, logout } = useAuth0();

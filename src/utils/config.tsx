@@ -16,8 +16,8 @@ export const ROUTES = [
         exact: true,
     },
     {
-        path: "/createproduct",
-        component: () => import("../Pages/createProduct"),
+        path: "/newproduct",
+        component: () => import("../Pages/newProduct"),
         exact: true,
     },
 

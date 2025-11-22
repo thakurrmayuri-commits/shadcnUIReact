@@ -18,6 +18,7 @@ import {
 import { Input } from "../components/ui/input";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Divide } from "lucide-react";
 
 
 function CreateProduct() {
@@ -62,6 +63,7 @@ function CreateProduct() {
                     Enter Product Details Below..
                 </FieldDescription>
                 <FieldGroup>
+                    {isPending && <div>Fetching..</div>}
                     <Field>
                         <FieldLabel htmlFor="productName">Product</FieldLabel>
                         <Input id="productName" type="text" required placeholder="product.."

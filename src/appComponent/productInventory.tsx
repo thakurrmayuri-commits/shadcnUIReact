@@ -6,50 +6,33 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import { Link } from "react-router-dom";
 import { Pencil, Trash2 } from 'lucide-react';
-import { Checkbox } from "@/components/ui/checkbox";
-import { useNavigate } from "react-router-dom";
+import { Checkbox } from "../components/ui/checkbox";
 
-import { setLoading } from "../reducers/inventoryReducer"
 
 import {
     Tooltip,
     TooltipContent,
     TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "../components/ui/tooltip"
 
 import { Plus } from 'lucide-react';
-import useInventory from "./useInventory";
 
 
+import { deleteProduct } from "../services/product-service";
 
-export function TableDemo() {
-
-
-    const url = "http://localhost:8000/inventory";
-    const navigate = useNavigate();
-
-    const { inventory } = useInventory(url);
-
-
-
-
-    const handleDeleteItem = (id: string) => {
-        console.log("item: ", id);
-        setLoading(true);
+const InventoryTable = ({ products }: { products: any[] }) => {
+    const deleteProductHandler = async (productId: string) => {
         try {
-            fetch(url + "/" + id, {
-                method: "DELETE",
-            }).then(() => {
-
-                navigate(`/`);
-            })
-        } catch (err) { console.error(err) };
-
+            // Call the deleteProduct service function
+            await deleteProduct(productId);
+            // Optionally, you can add logic to refresh the product list after deletion
+        } catch (error) {
+            console.error("Error deleting product in table:", error);
+        }
     };
-
 
 
 
@@ -58,7 +41,7 @@ export function TableDemo() {
 
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <a href="/createproduct">
+                    <a href="/newproduct">
                         <button className="w-45 px-4 rounded bg-black text-white m-6 flex flex-row gap-4 cursor-pointer"><span><Plus color="white" /></span><span>Add Product</span></button>
                     </a>
                 </TooltipTrigger>
@@ -84,7 +67,7 @@ export function TableDemo() {
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-                        {inventory.map((item: any) => (
+                        {products.map((item: any) => (
                             <TableRow key={item.id}>
                                 <TableCell className="font-medium"><Checkbox id={"product"} /></TableCell>
                                 <TableCell className="font-medium">{item.product}</TableCell>
@@ -103,7 +86,7 @@ export function TableDemo() {
                                             style={{ cursor: "pointer", marginRight: 8, blockSize: 20 }}
                                         />
                                     </Link>
-                                    <button onClick={() => handleDeleteItem(item.id)}><Trash2 style={{ cursor: "pointer", color: "red", blockSize: 20 }} /></button>
+                                    <button onClick={() => deleteProductHandler(item.id)}><Trash2 style={{ cursor: "pointer", color: "red", blockSize: 20 }} /></button>
 
                                 </TableCell>
                             </TableRow>
@@ -115,3 +98,4 @@ export function TableDemo() {
         </section>
     )
 }
+export default InventoryTable;
