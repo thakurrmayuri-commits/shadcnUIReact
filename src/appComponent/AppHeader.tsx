@@ -4,8 +4,8 @@ import {
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
-} from "../components/ui/navigation-menu";
-import { Button } from "../components/ui/button";
+} from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
 import UserInfo from "./UserInfo";
 
 function AppHeader() {

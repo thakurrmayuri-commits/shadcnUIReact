@@ -6,22 +6,22 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "../components/ui/table";
+} from "@/components/ui/table";
 import { Link } from "react-router-dom";
 import { Pencil, Trash2 } from 'lucide-react';
-import { Checkbox } from "../components/ui/checkbox";
+import { Checkbox } from "@/components/ui/checkbox";
 
 
 import {
     Tooltip,
     TooltipContent,
     TooltipTrigger,
-} from "../components/ui/tooltip"
+} from "@/components/ui/tooltip"
 
 import { Plus } from 'lucide-react';
 
 
-import { deleteProduct } from "../services/product-service";
+import { deleteProduct } from "@/services/product-service";
 
 const InventoryTable = ({ products }: { products: any[] }) => {
     const deleteProductHandler = async (productId: string) => {

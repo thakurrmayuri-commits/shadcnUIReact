@@ -1,18 +1,18 @@
-import { createProduct } from "../services/product-service";
+import { createProduct } from "@/services/product-service";
 import {
     Card,
     CardContent,
     CardFooter,
     CardHeader,
     CardTitle,
-} from "../components/ui/card";
+} from "@/components/ui/card";
 import {
     Field,
     FieldContent,
     FieldError,
     FieldLabel,
-} from "../components/ui/field";
-import { Input } from "../components/ui/input";
+} from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
 import {
     Select,
     SelectContent,
@@ -20,8 +20,8 @@ import {
     SelectSeparator,
     SelectTrigger,
     SelectValue,
-} from "../components/ui/select";
-import { Button } from "../components/ui/button";
+} from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
 import { Controller, useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -29,7 +29,7 @@ import {
     InputGroup,
     InputGroupAddon,
     InputGroupInput,
-} from "../components/ui/input-group";
+} from "@/components/ui/input-group";
 import { DollarSignIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 const productSchema = z.object({

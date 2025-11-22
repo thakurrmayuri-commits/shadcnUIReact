@@ -2,7 +2,7 @@ import { StatsHome } from "../appComponent/StatsHome";
 import InventoryTable from "../appComponent/productInventory";
 import React from "react";
 import { useEffect } from "react";
-import { fetchProducts } from "../services/product-service";
+import { fetchProducts } from "@/services/product-service";
 
 
 const Home = () => {

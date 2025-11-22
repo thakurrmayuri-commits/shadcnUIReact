@@ -7,18 +7,18 @@ import {
     FieldLabel,
     FieldLegend,
     FieldSet,
-} from "../components/ui/field";
+} from "@/components/ui/field";
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "../components/ui/select"
-import { Input } from "../components/ui/input";
+} from "@/components/ui/select"
+import { Input } from "@/components/ui/input";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Divide } from "lucide-react";
+
 
 
 function CreateProduct() {

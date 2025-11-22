@@ -3,7 +3,7 @@ import {
     ItemContent,
     ItemGroup,
     ItemTitle,
-} from "../components/ui/item"
+} from "@/components/ui/item"
 import { Box, TrendingUp, TriangleAlert, CircleDollarSign } from 'lucide-react';
 
 
